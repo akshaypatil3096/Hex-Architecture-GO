@@ -3,15 +3,25 @@ package main
 import (
 	"fmt"
 
-	"github.com/akshaypatil3096/Hex-Architecture-GO/internal/adapters/core/arithmetic"
+	"github.com/akshaypatil3096/Hex-Architecture-GO/internal/adapters/framework/right/db"
+	"github.com/akshaypatil3096/Hex-Architecture-GO/internal/ports"
 )
 
 func main() {
+	prepare()
+}
+
+func prepare() {
 	fmt.Println("HI")
+	var (
+		err error
 
-	arithAdapter := arithmetic.NewAdapter()
-	res, _ := arithAdapter.Addition(1, 2)
+		// ports
+		dbaseAdapter ports.DbPort
+		core         ports.ArithmeticPort
+		appAdapter   ports.APIPort
+		gRPCAdapter  ports.GRPCPort
+	)
 
-	// api.NewAdapter(arithAdapter)
-	fmt.Println(res)
+	db.NewAdapter("")
 }
