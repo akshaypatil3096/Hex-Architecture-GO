@@ -20,7 +20,7 @@ func (apiAdapter Adapter) GetAddition(a, b int) (int, error) {
 		return 0, err
 	}
 
-	err = apiAdapter.db.AddToHistory(ans, "Addition")
+	err = apiAdapter.db.AddToHistory(int32(ans), "Addition")
 	if err != nil {
 		return 0, err
 	}
@@ -33,7 +33,7 @@ func (apiAdapter Adapter) GetSubtraction(a, b int) (int, error) {
 		return 0, err
 	}
 
-	err = apiAdapter.db.AddToHistory(ans, "Subtraction")
+	err = apiAdapter.db.AddToHistory(int32(ans), "Subtraction")
 	if err != nil {
 		return 0, err
 	}
@@ -46,7 +46,7 @@ func (apiAdapter Adapter) GetMultiplication(a, b int) (int, error) {
 		return 0, err
 	}
 
-	err = apiAdapter.db.AddToHistory(ans, "Multiplication")
+	err = apiAdapter.db.AddToHistory(int32(ans), "Multiplication")
 	if err != nil {
 		return 0, err
 	}
@@ -58,7 +58,7 @@ func (apiAdapter Adapter) GetDivision(a, b int) (int, error) {
 		return 0, err
 	}
 
-	err = apiAdapter.db.AddToHistory(ans, "Division")
+	err = apiAdapter.db.AddToHistory(int32(ans), "Division")
 	if err != nil {
 		return 0, err
 	}
